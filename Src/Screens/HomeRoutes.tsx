@@ -2,6 +2,7 @@ import React from 'react'
 import { Route,NativeRouter,Routes ,useNavigate} from 'react-router-native'
 import { View,Text,Button} from 'react-native'
 import Home from './Home'
+import Welcome from './Welcome'
 
 
 function HomeRoutes() {
@@ -12,7 +13,7 @@ function HomeRoutes() {
             <Text>
                 l7abs
             </Text>
-            <Button  title='Back' onPress={()=>{console.log("comiii");navigate('/')}} />
+            <Button  title='Back' onPress={()=>{console.log("comiii");navigate('/Home')}} />
         </View>
     }
     const Comissaria =()=>{
@@ -21,13 +22,14 @@ function HomeRoutes() {
             <Text>
                 PJ
             </Text>
-            <Button  title='Back' onPress={()=>{console.log("comiii");navigate('/')}} />
+            <Button  title='Back' onPress={()=>{console.log("comiii");navigate('/Home')}} />
         </View>
     }
     return (
         <NativeRouter>
         <Routes>
-            <Route  path='/' element={<Home/>} />
+            <Route  path='/' element={<Welcome/>} />
+            <Route  path='/Home' element={<Home/>} />
             <Route  path='/comisaria' element={<Comissaria/>} />
             <Route  path='/Me7kama' element={<Mehkama/>} />
             {/* <Route exact path='/create' element={<NewProduct/>} />
